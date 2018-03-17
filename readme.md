@@ -49,3 +49,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+##Hướng dẫn cài đặt project
+1. tải project về
+2 chạy lệnh composer update
+3 import database và cấu hình file env
+4 chạy lệnh php artisan để start project
+##Hướng dẫn sử dụng api
+vd sử dụng với postman
+1 sử dụng api register chạy trên localhost
+  - vào đường dẫn http://localhost:8000/api/auth/register
+  -setting header [{"key":"Accept","value":"application/json"}],[{"key":"Authorization","value":""}],
+  -setting body form-data gồm các key là name,tel,sex,email,password
+  sau dó gửi request
+2 sử dụng api login chạy trên localhost
+    - vào đường dẫn http://localhost:8000/api/auth/login
+    -setting header [{"key":"Accept","value":"application/json"}],[{"key":"Authorization","value":""}],
+    -setting body form-data gồm các key là email,password
+    sau dó gửi request và sẽ trả về 1 token nếu đăng nhâp đúng thông tin
+
+3 sử dụng api get user info  chạy trên localhost
+  - vào đường dẫn http://localhost:8000/api/user-info
+  -setting header [{"key":"Accept","value":"application/json"}],[{"key":"Authorization","value":"token lấy ở reponse lúc login"}],
+   sau dó gửi request và sẽ trả về data json
+4 sử dụng api get user info  chạy trên localhost
+  - vào đường dẫn http://localhost:8000/api/update-user-info
+  -setting header [{"key":"Accept","value":"application/json"}],[{"key":"Authorization","value":"token lấy ở reponse lúc login"}],
+  -setting body form-data gồm các key là name,tel,sex
+  sau dó gửi request và sẽ trả về data json
+5 sử dụng api get user info  chạy trên localhost
+- vào đường dẫn http://localhost:8000/api/logout
+-setting header [{"key":"Accept","value":"application/json"}],[{"key":"Authorization","value":"token lấy ở reponse lúc login"}],
+  sau dó gửi request và sẽ trả về data json
